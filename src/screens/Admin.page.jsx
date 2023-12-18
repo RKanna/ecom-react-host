@@ -4,8 +4,24 @@ import { useUser } from "../context/UserContext";
 import { collection, addDoc } from "firebase/firestore/lite";
 import { appDB } from "../utils/firestore.js";
 import "../css/form.css";
+import { Link, useParams } from "react-router-dom";
+import {
+  getDocs,
+  query,
+  orderBy,
+  limit,
+  doc,
+  getDoc,
+  deleteDoc,
+  deleteField,
+  updateDoc,
+  where,
+  FieldValue,
+} from "firebase/firestore/lite";
 
 const Admin = () => {
+  const { itemId } = useParams();
+
   const { generateUUID, setGenerateUUID, generateUniqueID } = useUser();
 
   const { InventoryList, setInventoryList, updateInventoryList, cards } =
@@ -234,7 +250,11 @@ const Admin = () => {
         </button>
       </form>
       <h1>Current Product Count: {cards.length}</h1>
-      
+      <div>
+        <Link to="/adminInventory" className="add-prod">
+          Back to Store Inventory
+        </Link>
+      </div>
     </section>
   );
 };

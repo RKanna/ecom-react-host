@@ -5,41 +5,9 @@ import { useStripe } from "@stripe/react-stripe-js";
 import { useState } from "react";
 
 const Payment = () => {
-  //   const stripe = useStripe();
-  //   const elements = useElements();
-
-  //   const [email, setEmail] = useState("");
-  //   const [message, setMessage] = useState(null);
-  //   const [isLoading, setIsLoading] = useState(false);
-  //   const [clientSecret, setClientSecret] = useState(null);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //   const stripe = await loadStripe(
-    //     "pk_live_51MjUWTAODslDxhhpmVYdua1MHbKhW9g9eEUmeogImrmE0KmH2B2ND6tGbXJmWHTNSpqRZZa170jawWJ5lgfmfJOw00oO3zKK35"
-    //   );
-    //   const body = {
-    //     products: cart,
-    //   };
-    //   const headers = {
-    //     "Content-Type": "application/json",
-    //   };
-    //   const response = await fetch(`${apiURL}/create-checkout-session`, {
-    //     method: "POST",
-    //     headers: headers,
-    //     body: JSON.stringify(body),
-    //   });
-    //   const session = await response.json();
-    //   const result = stripe.redirectToCheckout({
-    //     sessionId: session.id,
-    //   });
-    //   if (result.error) {
-    //     console.log(result.error);
-    //   }
   };
-  // const PaymentElementOptions = {
-  //   layout: "tabs",
-  // };
 
   const {
     userEmail,

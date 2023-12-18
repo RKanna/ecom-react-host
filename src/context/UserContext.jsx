@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 //Getting FireStore DB data
 import "../utils/index.js";
-import { collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs, getDoc } from "firebase/firestore/lite";
 import { appDB } from "../utils/firestore.js";
 
 const UserContext = createContext();
@@ -214,6 +214,8 @@ export const UserProvider = ({ children }) => {
   };
 
   //From Firestore DB to getting Products data
+
+  //getting name from db
 
   return (
     <UserContext.Provider

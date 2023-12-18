@@ -24,6 +24,7 @@ import FilteredCategory from "./screens/FilteredCategory.page.jsx";
 import CustomPageNotFound from "./components/CustomPageNotFound.jsx";
 import Admin from "./screens/Admin.page.jsx";
 import PrivateAdmin from "./components/PrivateAdmin.jsx";
+import AdminInventory from "./screens/AdminInventory.jsx";
 // import TestComponent from "./screens/TestComponent.jsx";
 
 const router = createBrowserRouter(
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
       </Route> */}
       <Route path="" element={<PrivateAdmin />}>
         <Route path="/admin" element={<Admin />} />
+        <Route path="/adminInventory" element={<AdminInventory />} />
       </Route>
 
       {/* <Route path="/test" element={<TestComponent />} /> */}

@@ -39,22 +39,15 @@ const Login = () => {
         );
         console.log({ user });
         setFormFields({ email: "", password: "", confirmPassword: "" });
-        // if (user.displayName) {
-        //   console.log("User displayName:", user.displayName);
-        // } else {
-        //   console.log("User displayName is null or undefined");
-        // }
 
         if (user) {
           setUser(user.email, user.displayName);
           navigate("/Category");
-          // navigate("/cart");
           console.log(user.email);
           console.log(user.displayName);
-
-          if (user.email === "admin@kannan.com") {
+          if (user.email === "admin@admin.com") {
             setUser(user.email, user.displayName);
-            navigate("/admin");
+            navigate("/adminInventory");
             console.log(user.email);
             console.log(user.displayName);
           }

@@ -5,7 +5,7 @@ import { Outlet, Navigate } from "react-router-dom";
 
 const PrivateAdmin = () => {
   const { userEmail } = useUser();
-  return userEmail === "admin@kannan.com" ? (
+  return userEmail === "admin@admin.com" ? (
     <Outlet />
   ) : (
     <Navigate to="/admin" replace />

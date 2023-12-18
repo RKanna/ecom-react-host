@@ -40,7 +40,7 @@ const Shipping = () => {
     const storedProfile = localStorage.getItem("profile");
 
     if (storedProfile) {
-      // Parse and set the stored profile information
+     
       updateProfile(JSON.parse(storedProfile));
     }
   }, []);

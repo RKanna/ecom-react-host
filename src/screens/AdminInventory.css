@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+.AdminInventory h1 {
+  font-size: 2.3rem;
+}
+.AdminInventory .search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  border: 1px solid gray;
+  border-right: none;
+  cursor: pointer;
+}
+.AdminInventory .search-main {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.AdminInventory .search-main .add-prod {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: yellow;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.AdminInventory .search-main .add-prod:hover {
+  border: 1px solid black;
+}
+.AdminInventory .searchBar {
+  padding: 1rem;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  outline: none;
+  border: 1px solid gray;
+}
+.AdminInventory .add-product {
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: rgb(43, 42, 42);
+  color: white;
+  cursor: pointer;
+}
+.AdminInventory ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.AdminInventory li {
+  list-style: none;
+  font-weight: 700;
+}
+.AdminInventory .row-items-inventory {
+}
+.AdminInventory .row-inventory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.AdminInventory .api-img {
+  margin-left: -2.5rem;
+  width: 3rem;
+}
+.title-pro {
+  width: 9rem;
+  text-wrap: wrap;
+}
+.name-pro {
+}
+.AdminInventory .category {
+  margin-left: -6.5rem;
+  width: 4rem;
+}
+.price-pro {
+  width: 5rem;
+  margin-left: -1.5rem;
+}
+.check-eye {
+  width: 2rem;
+  margin-left: -1rem;
+}
+.update {
+  width: 2rem;
+  margin-left: -1rem;
+}
+.delete-pro {
+  width: 2rem;
+  margin-left: -1rem;
+}
+.eyeBtn,
+.editBtn,
+.deleteBtn {
+  cursor: pointer;
+}
+.AdminInventory .deleteBtn {
+  color: red;
+}
+.AdminInventory .eyeBtn {
+  color: green;
+}
+
+/* Overlay */
+
+.AdminInventory .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.AdminInventory .overlay-content {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.AdminInventory .close-btn {
+  width: 10rem;
+  font-size: 1rem;
+  color: black;
+  background-color: rgb(235, 235, 23);
+  cursor: pointer;
+  border: none;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+  border-radius: 0.5rem;
+}
+.AdminInventory .close-btn:hover {
+  color: green;
+  border: 1px solid grey;
+}
+.AdminInventory .overlay-img {
+  width: 13rem;
+}
+.AdminInventory .overlay-content p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.AdminInventory .desc {
+  width: 35rem;
+}
+.AdminInventory .overlay-title {
+  width: 25rem;
+  color: rgb(11, 11, 47);
+}
+.AdminInventory .stock {
+  color: green;
+}
+.AdminInventory .stock-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+.AdminInventory .btn-close-container {
+  display: flex;
+  justify-content: end;
+}
+.AdminInventory .product-add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+.AdminInventory .btn-close-container {
+}
+.AdminInventory .for-update-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 2rem;
+}
+.AdminInventory .for-close-icon {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 0.5rem;
+}
+.AdminInventory .close-icon:hover {
+  cursor: pointer;
+  color: red;
+}
+.AdminInventory {
+  margin-top: 5rem;
+}
+.AdminInventory .title-pre {
+  margin-left: -7rem;
+}

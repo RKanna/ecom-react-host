@@ -33,7 +33,7 @@ const HomeScreen = () => {
         <div className="banner-container">
           <img
             className="banner-img"
-            src="./public/assets/background/back.jpg"
+            src="/assets/background/back.png"
             alt=""
           />
           <Link to="/Category" className="banner-btn">
@@ -51,11 +51,20 @@ const HomeScreen = () => {
         )}
 
         <section className="row">
-          {filteredProducts.slice(0, 12).map((card) =>
+          {/* {filteredProducts.slice(0, 13).map((card) =>
             card.sliderValue === "false" ? (
               <div className="column" key={card.itemId}>
                 <Product card={card} />
               </div>
+            ) : null
+          )} */}
+          {filteredProducts.slice(0, 14).map((card) =>
+            card.itemId ? (
+              card.sliderValue === "false" ? (
+                <div className="column" key={card.itemId}>
+                  <Product card={card} />
+                </div>
+              ) : null
             ) : null
           )}
         </section>
