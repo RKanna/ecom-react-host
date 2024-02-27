@@ -9,6 +9,7 @@ import Rating from "../components/Rating.component";
 import { useUser } from "../context/UserContext";
 import { GoDotFill } from "react-icons/go";
 import { useEffect } from "react";
+import { useState } from "react";
 const DetailProductPage = () => {
   const {
     cart,
@@ -18,6 +19,8 @@ const DetailProductPage = () => {
     searchTerm,
     filteredProducts,
     cards,
+    buyNow,
+    setCart,
   } = useUser();
   const { itemId: productId } = useParams();
   const card = cards.find((p) => p.itemId === productId);
@@ -26,8 +29,29 @@ const DetailProductPage = () => {
     addToCart(card);
   };
 
-  //handleGoBack
   const navigate = useNavigate();
+
+  // const handleBuyNow = () => {
+  //   clearCart();
+  //   buyNow(card);
+  //   navigate("/Cart");
+  // };
+
+  const handleClearCart = () => {
+    clearCart();
+  };
+  const handleBuyNowWithAddToCart = () => {
+    addToCart(card);
+  };
+
+  const handleBuyNow = () => {
+    handleClearCart();
+    handleBuyNowWithAddToCart();
+    navigate("/Cart");
+  };
+
+  //handleGoBack
+
   const handleGoBack = () => {
     navigate(-1);
     //for force rerendering of homescreen because fixing the slider disappearance
@@ -35,7 +59,7 @@ const DetailProductPage = () => {
 
   return (
     <section className="details">
-      <div className="mainRow">
+      <div className="mainRow ">
         <div className="versatile-magnifier">
           {/* <h4>Versatile Magnifier</h4> */}
           <h4>VM</h4>
@@ -60,16 +84,26 @@ const DetailProductPage = () => {
             <span>Brand : {card.brand}</span>
             <span>Price : ₹ {card.price}</span>
             <p>Description: {card.description}</p>
+            <div className="flex items-center justify-center">
+              <button
+                className="btn-add-cart text-nowrap"
+                type="button"
+                disabled={card.countInStock == 0}
+                onClick={handleBuyNow}
+              >
+                Buy Now
+              </button>
+            </div>
           </article>
         </div>
         <div className="columnThird">
           <div className="box-div">
-            <div className="price-cart">
+            <div className="price-cart text-nowrap">
               <span>Price : </span>
               <span>₹ {card.price}</span>
             </div>
             <hr />
-            <div className="available">
+            <div className="flex flex-row items-center justify-center available">
               <span>Availability :</span>
               <span className="top-nl">
                 {/* {product.countInStock > 0 ? "In Stock" : "Out of Stock"} */}
@@ -83,7 +117,7 @@ const DetailProductPage = () => {
             <hr />
             <div>
               <button
-                className="btn-add-cart"
+                className="btn-add-cart text-nowrap"
                 type="button"
                 disabled={card.countInStock == 0}
                 onClick={handleAddToCart}

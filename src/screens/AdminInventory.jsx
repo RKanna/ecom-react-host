@@ -202,7 +202,7 @@ const AdminInventory = () => {
                   <li className="category">{card.category}</li>
                   <li className="price-pro">{card.price} ₹</li>
                   <li>
-                    <img className="api-img" src={card.image} alt="" />
+                    <img className="api-img max-w-10" src={card.image} alt="" />
                   </li>
                   <li className="check-eye">
                     <FaEye

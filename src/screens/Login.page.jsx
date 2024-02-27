@@ -9,16 +9,22 @@ import { useUser } from "./../context/UserContext.jsx";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { appDB } from "../utils/firestore.js";
 const Login = () => {
-  const { formFields, setFormFields, setUser, logoutUser, userEmail } =
-    useUser();
-  const { displayName, email, password, confirmPassword } = formFields;
+  const {
+    formFields,
+    setFormFields,
+    setUser,
+    logoutUser,
+    userEmail,
+    getDisplayName,
+  } = useUser();
+  const { email, password, confirmPassword, displayName } = formFields;
 
   const navigate = useNavigate();
   const signInWithGoogle = async (event) => {
     event.preventDefault();
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
-    setUser(user.email, user.displayName);
+    setUser(user.email, user.displayName, user.uid);
     // navigate("/Category");
     navigate("/Category");
     // navigate("/cart");
@@ -41,12 +47,14 @@ const Login = () => {
         setFormFields({ email: "", password: "", confirmPassword: "" });
 
         if (user) {
-          setUser(user.email, user.displayName);
+          // setUser(user.email, user.uid, user.displayName);
+          setUser(user.email, user.displayName, user.uid || "");
           navigate("/Category");
           console.log(user.email);
           console.log(user.displayName);
+
           if (user.email === "admin@admin.com") {
-            setUser(user.email, user.displayName);
+            setUser(user.email, user.displayName, user.uid);
             navigate("/adminInventory");
             console.log(user.email);
             console.log(user.displayName);
@@ -94,17 +102,30 @@ const Login = () => {
         <div className="form-group for-gap">
           <button type="submit">Sign In</button>
 
-          <button onClick={signInWithGoogle}>
+          <button
+            onClick={signInWithGoogle}
+            className="flex items-center justify-center gap-2"
+          >
             <FaGoogle /> Google Login
           </button>
         </div>
         <div>
           <p>
             New user?{" "}
-            <Link className="register-link" to="/Registration">
+            <Link
+              className="font-bold register-link text-blue-950"
+              to="/Registration"
+            >
               Register here
             </Link>
           </p>
+        </div>
+        <div className="flex justify-center mt-3">
+          <div className="flex flex-col items-center justify-center w-3/4 text-white bg-black rounded-2xl">
+            <h4 className="underline">Test Credentials</h4>
+            <h5>change@gmail.com</h5>
+            <h5>123456</h5>
+          </div>
         </div>
       </form>
     </section>

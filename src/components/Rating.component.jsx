@@ -1,51 +1,54 @@
 import { FaStarHalfAlt, FaStar, FaRegStar } from "react-icons/fa";
+import { ImStarHalf } from "react-icons/im";
+import { ImStarFull } from "react-icons/im";
+import { ImStarEmpty } from "react-icons/im";
 const Rating = ({ value, text }) => {
   return (
     <section className="rating">
-      <div>
+      <div className="flex flex-row gap-2">
         <span>
           {value >= 1 ? (
-            <FaStar />
+            <ImStarFull />
           ) : value >= 0.5 ? (
-            <FaStarHalfAlt />
+            <ImStarHalf />
           ) : (
-            <FaRegStar />
+            <ImStarEmpty />
           )}
         </span>
         <span>
           {value >= 2 ? (
-            <FaStar />
+            <ImStarFull />
           ) : value >= 1.5 ? (
-            <FaStarHalfAlt />
+            <ImStarHalf />
           ) : (
-            <FaRegStar />
+            <ImStarEmpty />
           )}
         </span>
         <span>
           {value >= 3 ? (
-            <FaStar />
+            <ImStarFull />
           ) : value >= 2.5 ? (
-            <FaStarHalfAlt />
+            <ImStarHalf />
           ) : (
-            <FaRegStar />
+            <ImStarEmpty />
           )}
         </span>
         <span>
           {value >= 4 ? (
-            <FaStar />
+            <ImStarFull />
           ) : value >= 3.5 ? (
-            <FaStarHalfAlt />
+            <ImStarHalf />
           ) : (
-            <FaRegStar />
+            <ImStarEmpty />
           )}
         </span>
         <span>
           {value >= 5 ? (
-            <FaStar />
+            <ImStarFull />
           ) : value >= 4.5 ? (
-            <FaStarHalfAlt />
+            <ImStarHalf />
           ) : (
-            <FaRegStar />
+            <ImStarEmpty />
           )}
         </span>
       </div>

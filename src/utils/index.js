@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // import { getFirestore } from "firebase/firestore/lite";
 
 const firebaseConfig = {
@@ -69,6 +70,7 @@ const createUserDocumentFromAuth = async (
   }
   return userDocRef;
 };
+const imageDb = getStorage(app);
 
 export {
   signInWithGooglePopup,
@@ -77,6 +79,7 @@ export {
   signInWithEmailAndPassword,
   signInAuthUserWithEmailAndPassword,
   appDB,
+  imageDb,
 };
 
 // const addData = async (collection, id, val) => {

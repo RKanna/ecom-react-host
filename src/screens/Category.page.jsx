@@ -32,7 +32,7 @@ const Category = () => {
 
   return (
     <section className="category-section">
-      <h1>Categories</h1>
+      <h1 className="text-4xl font-bold">Categories</h1>
       <div className="parent-box">
         {categories.map((category) => {
           const shouldDisplayCategory = cards.some(

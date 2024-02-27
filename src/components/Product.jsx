@@ -13,19 +13,21 @@ const Product = ({ card }) => {
         </Link>
         <div className="card-body">
           <Link to={`/product/${card.itemId}`}>
-            <div className="card-title">
+            <div className="card-title flex justify-center items-center">
               <strong>{card.name}</strong>
             </div>
           </Link>
           {/* <br /> */}
-          <div>
+          <div className="flex justify-center items-center">
             <Rating value={card.rating} text={`${card.totalReviews} reviews`} />
           </div>
           {/* <br /> */}
-          <div className="card-text">₹ {card.price}</div>
+          <div className="card-text flex justify-center items-center">
+            ₹ {card.price}
+          </div>
           <button
             className="btn-add-cart new-btn"
-            disabled={card.countInStock === 0}
+            disabled={card.countInStock == 0}
             onClick={() => addToCart(card)}
           >
             Add to Cart

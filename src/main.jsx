@@ -25,6 +25,8 @@ import CustomPageNotFound from "./components/CustomPageNotFound.jsx";
 import Admin from "./screens/Admin.page.jsx";
 import PrivateAdmin from "./components/PrivateAdmin.jsx";
 import AdminInventory from "./screens/AdminInventory.jsx";
+import Profile from "./screens/Profile.page.jsx";
+import AllProducts from "./screens/AllProducts.page.jsx";
 // import TestComponent from "./screens/TestComponent.jsx";
 
 const router = createBrowserRouter(
@@ -33,6 +35,7 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
 
       <Route path="/product/:itemId" element={<DetailProductPage />} />
+      <Route path="/allProducts" element={<AllProducts />} />
 
       <Route path="/Category" element={<Category />} />
       <Route path="/category/:category" element={<FilteredCategory />} />
@@ -41,6 +44,7 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/Login" element={<Login />} />
         <Route path="/Registration" element={<Registration />} />
+        {/* <Route path="/profile/:uid" element={<Profile />} /> */}
       </Route>
       {/* <Route path="" element={<AdminProtection />}>
       </Route> */}
@@ -54,6 +58,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Protected />}>
         <Route path="/Shipping" element={<Shipping />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/profile/:uid" element={<Profile />} />
       </Route>
       <Route path="*" element={<CustomPageNotFound />} />
     </Route>

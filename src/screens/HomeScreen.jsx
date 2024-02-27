@@ -3,7 +3,7 @@ import Slider from "../slider/Slider";
 import { useState, useEffect } from "react";
 import React from "react";
 import { useUser } from "../context/UserContext";
-import { ScrollRestoration, Link } from "react-router-dom";
+import { ScrollRestoration, Link, NavLink } from "react-router-dom";
 const HomeScreen = () => {
   const {
     searchTerm,
@@ -28,7 +28,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <div className="fix-homescreen">
+      <div>
         {/* Here, key={forceRerender} update every time when i click go back from detailproduct page so it will force reRendering it will fix  */}
         <div className="banner-container">
           <img
@@ -36,7 +36,13 @@ const HomeScreen = () => {
             src="/assets/background/back.png"
             alt=""
           />
-          <Link to="/Category" className="banner-btn">
+          {/* <Link to="/Category" className="banner-btn">
+            Shop Now
+          </Link> */}
+          <Link
+            to="/Category"
+            className="px-4 py-2 text-white rounded-lg shadow-md banner-btn bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
+          >
             Shop Now
           </Link>
         </div>
@@ -45,13 +51,13 @@ const HomeScreen = () => {
           <Slider key={forceRerender} cards={cards} />
         )}
         {!searchTerm ? (
-          <h1>Recently Added Products</h1>
+          <h1 className="text-4xl font-bold">Recently Added Products</h1>
         ) : (
           <h1>Search Results</h1>
         )}
 
         <section className="row">
-          {/* {filteredProducts.slice(0, 13).map((card) =>
+          {/* {filteredProducts.slice(0, 10).map((card) =>
             card.sliderValue === "false" ? (
               <div className="column" key={card.itemId}>
                 <Product card={card} />
@@ -69,6 +75,14 @@ const HomeScreen = () => {
           )}
         </section>
         <ScrollRestoration />
+        <div className="flex items-center justify-center">
+          <Link
+            to={`/allProducts`}
+            className="p-3 font-bold transition-all ease-in-out transform bg-gray-500 rounded-xl hover:bg-gray-700 hover:scale-105 hover:text-white"
+          >
+            View All Products
+          </Link>
+        </div>
       </div>
     </>
   );

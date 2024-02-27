@@ -53,8 +53,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-main">
-      <h1>Shopping Cart</h1>
+    <div className="min-h-screen cart-main">
+      <h1 className="font-bold">Shopping Cart</h1>
       {cart.length === 0 ? (
         <div className="empty-msg">Your Cart is Empty</div>
       ) : (
@@ -100,6 +100,7 @@ const Cart = () => {
             ))}
           </section>
           <div className="box-cart-value">
+            {/* <button onClick={() => clearCart()}>Clear Cart fully</button> */}
             <h2>Subtotal</h2>
             <h2>{calculateTotalItems()} Items</h2>
             <h2>Total Value : ₹ {calculateSubtotal()}</h2>
@@ -109,7 +110,7 @@ const Cart = () => {
               </Link>
             ) : (
               <Link to="/login" className="proceed">
-                Login to Countinue
+                Login to Continue
               </Link>
             )}
           </div>

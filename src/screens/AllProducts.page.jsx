@@ -4,28 +4,20 @@ import Product from "../components/Product";
 import Rating from "../components/Rating.component";
 import { useUser } from "../context/UserContext";
 
-const FilteredCategory = () => {
+const AllProducts = () => {
   const { addToCart, cards } = useUser();
-  const { category } = useParams();
-  console.log("Category:", category);
   const [filteredCategory, setFilteredCategory] = useState([]);
-
-  useEffect(() => {
-    // Filter products based on the selected category
-    const categoryProducts = cards.filter((card) => card.category === category);
-    setFilteredCategory(categoryProducts);
-  }, [category]);
-
+  console.log(cards);
   const navigate = useNavigate();
   const handlePreviousPage = () => {
-    navigate(-2);
+    navigate(-1);
   };
 
   return (
     <section className="filter-page">
-      <h1 className="text-4xl font-bold">{category} Products</h1>
+      <h1 className="text-4xl font-bold">All Products</h1>
       <div className="filtered-category-page">
-        {filteredCategory.map((filteredProduct) => (
+        {cards.map((filteredProduct) => (
           <div key={filteredProduct.itemId}>
             <Link
               className="filtered-box w-96 h-96"
@@ -67,4 +59,4 @@ const FilteredCategory = () => {
   );
 };
 
-export default FilteredCategory;
+export default AllProducts;

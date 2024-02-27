@@ -4,7 +4,7 @@ import Header from "./components/Header.component";
 import Footer from "./components/Footer.component";
 import HomeScreen from "./screens/HomeScreen";
 import { Outlet } from "react-router-dom";
-import Slider from "./slider/Slider";
+// import Slider from "./slider/Slider";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Payment from "./screens/Payment.page";
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="py-3">
+      <main>
         <Outlet />
         <ToastContainer />
       </main>
